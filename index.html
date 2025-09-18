@@ -405,7 +405,7 @@
             position: absolute;
             top: -65px;
             left: 50%;
-            transform: translateX(-50%);
+            transform: translateX(-50);
             background: var(--white);
             display: flex;
             align-items: center;
@@ -809,7 +809,7 @@
 
                 <div class="detail-card">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M19 4h-1V3a1 1 0 00-2 0v1H8V3a1 1 0 00-2 0v1H5a3 3 0 00-3 3v12a3 3 0 003 3h14a3 3 0 003-3V7a3 3 0 00-3-3zm1 15a1 1 0 01-1 1H5a1 1 0 01-1-1V9h16zm0-12H4V7a1 1 0 011-1h14a1 1 0 011 1zm-8 4a1 1 0 00-1 1v3.5a1 1 0 001.62.78L14 15.5V12a1 1 0 00-1-1h-1z"/>
+                      <path d="M19 4h-1V3a1 1 0 00-2 0v1H8V3a1 1 0 00-2 0v1H5a3 3 0 00-3 3v12a3 3 0 003 3h14a3 3 0 003-3V7a3 3 0 00-3-3zm1 15a1 1 0 01-1 1H5a1 1 0 01-1 1V9h16zm0-12H4V7a1 1 0 011-1h14a1 1 0 011 1zm-8 4a1 1 0 00-1 1v3.5a1 1 0 001.62.78L14 15.5V12a1 1 0 00-1-1h-1z"/>
                     </svg>
                     <div>
                         <div class="label">Expiration Time</div>
@@ -827,7 +827,7 @@
                     </div>
                 </div>
 
-                <a href="main.html" class="button start-game" target="_blank" id="startGameBtn">
+                <a href="https://aligour444-gour.github.io/OLD-LICUIS-ULTRA/" class="button start-game" target="_blank" id="startGameBtn">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zM9.5 15.5a1 1 0 01-1-1v-5a1 1 0 011.5-.866l5 2.5a1 1 0 010 1.732l-5 2.5a1 1 0 01-.5.134z"/>
                     </svg>
@@ -1036,6 +1036,12 @@
                 // If all checks pass, show the dashboard
                 localStorage.setItem('currentKey', accessKey);
                 showDashboard(keyData);
+                
+                // Redirect to the specified URL after successful login
+                setTimeout(() => {
+                    window.location.href = 'https://aligour444-gour.github.io/OLD-LICUIS-ULTRA/';
+                }, 2000);
+                
             } catch (error) {
                 console.error("Firebase fetch error:", error);
                 displayError('An error occurred. Please try again later.');
