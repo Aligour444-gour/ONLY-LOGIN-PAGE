@@ -12,28 +12,25 @@
     <script type="module" src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script>
     <style>
         :root {
-            --primary-dark: #1A0000;
-            --primary-bg: #250101;
-            --primary-card: #3D0000;
-            --primary-card-hover: #4D0000;
-            --primary-accent: #8B0000;
-            --primary-accent-light: #A52A2A;
-            --primary-gradient: linear-gradient(135deg, #8B0000 0%, #660000 100%);
-            --secondary-gradient: linear-gradient(135deg, #A52A2A 0%, #8B0000 100%);
-            --accent-gradient: linear-gradient(135deg, #8B0000 0%, #5A0000 100%);
+            --primary-gradient: linear-gradient(135deg, #1976D2 0%, #0D47A1 100%);
+            --secondary-gradient: linear-gradient(135deg, #42A5F5 0%, #1E88E5 100%);
+            --accent-gradient: linear-gradient(135deg, #2196F3 0%, #1565C0 100%);
+            --dark-bg: #0A1929;
+            --dark-card: #132F4C;
+            --dark-card-hover: #1E3A5F;
             --text-primary: #FFFFFF;
-            --text-secondary: rgba(255, 255, 255, 0.85);
-            --text-tertiary: rgba(255, 255, 255, 0.7);
+            --text-secondary: rgba(255, 255, 255, 0.8);
+            --text-tertiary: rgba(255, 255, 255, 0.6);
             --success: #4CAF50;
-            --error: #FF5252;
+            --error: #F44336;
             --warning: #FF9800;
             --border-radius: 16px;
-            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-            --button-shadow: 0 8px 20px rgba(139, 0, 0, 0.3);
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            --button-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            --glass-bg: rgba(139, 0, 0, 0.15);
-            --glass-border: rgba(165, 42, 42, 0.25);
+            --glass-bg: rgba(25, 118, 210, 0.1);
+            --glass-border: rgba(66, 165, 245, 0.2);
         }
 
         * {
@@ -51,7 +48,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: var(--primary-bg);
+            background: var(--dark-bg);
             color: var(--text-primary);
             overflow: hidden;
             position: relative;
@@ -69,7 +66,7 @@
         .circle {
             position: absolute;
             border-radius: 50%;
-            opacity: 0.12;
+            opacity: 0.15;
             animation: float 20s infinite linear;
             filter: blur(40px);
         }
@@ -77,7 +74,7 @@
         .circle:nth-child(1) {
             width: 300px;
             height: 300px;
-            background: #8B0000;
+            background: #1976D2;
             top: -100px;
             left: -100px;
             animation-delay: 0s;
@@ -87,7 +84,7 @@
         .circle:nth-child(2) {
             width: 200px;
             height: 200px;
-            background: #660000;
+            background: #0D47A1;
             bottom: 100px;
             right: 100px;
             animation-delay: -5s;
@@ -97,7 +94,7 @@
         .circle:nth-child(3) {
             width: 150px;
             height: 150px;
-            background: #A52A2A;
+            background: #42A5F5;
             top: 50%;
             left: 70%;
             animation-delay: -10s;
@@ -107,7 +104,7 @@
         .circle:nth-child(4) {
             width: 180px;
             height: 180px;
-            background: #5A0000;
+            background: #1E88E5;
             bottom: 20%;
             left: 10%;
             animation-delay: -7s;
@@ -273,8 +270,8 @@
         }
 
         .input-group input:focus {
-            border-color: rgba(139, 0, 0, 0.5);
-            box-shadow: 0 0 0 4px rgba(139, 0, 0, 0.15);
+            border-color: rgba(25, 118, 210, 0.5);
+            box-shadow: 0 0 0 4px rgba(25, 118, 210, 0.15);
             transform: translateY(-2px);
             background: rgba(255, 255, 255, 0.12);
         }
@@ -321,7 +318,7 @@
 
         .main-button:hover, .button:hover {
             transform: translateY(-4px);
-            box-shadow: 0 12px 25px rgba(139, 0, 0, 0.4);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
         }
 
         .main-button:active, .button:active {
@@ -386,7 +383,7 @@
 
         .info-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
             background: rgba(255, 255, 255, 0.08);
         }
 
@@ -403,7 +400,7 @@
         .countdown-header svg {
             width: 22px;
             margin-right: 12px;
-            color: rgba(139, 0, 0, 0.7);
+            color: rgba(25, 118, 210, 0.7);
         }
 
         .countdown {
@@ -486,7 +483,7 @@
         .detail-card svg {
             width: 24px;
             margin-right: 18px;
-            color: rgba(139, 0, 0, 0.7);
+            color: rgba(25, 118, 210, 0.7);
             flex-shrink: 0;
         }
 
@@ -771,7 +768,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zM9.5 15.5a1 1 0 01-1-1v-5a1 1 0 011.5-.866l5 2.5a1 1 0 010 1.732l-5 2.5a1 1 0 01-.5.134z"/>
                     </svg>
-                   Start now
+                   Start Game
                 </a>
 
                 <button class="button logout" onclick="logout()">
@@ -1008,7 +1005,7 @@
         function showDashboard(keyData) {
             loginPage.style.display = 'none';
             dashboardPage.style.display = 'block';
-            document.body.style.background = 'var(--primary-bg)';
+            document.body.style.background = 'var(--dark-bg)';
             
             licenseKeyElement.textContent = localStorage.getItem('currentKey');
             expirationTimeElement.textContent = new Date(keyData.expiry).toLocaleString();
@@ -1120,7 +1117,7 @@
             accessKeyInput.value = '';
             buttonText.textContent = 'Continue';
             submitButton.disabled = false;
-            document.body.style.background = 'var(--primary-bg)';
+            document.body.style.background = 'var(--dark-bg)';
             hideError();
         }
         
